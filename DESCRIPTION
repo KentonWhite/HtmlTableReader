@@ -1,0 +1,12 @@
+Package: HtmlTableReader
+Title: An HTML Table Reader for ProjectTemplate
+Version: 0.0.0.9000
+Author: Kenton White
+Maintainer: Kenton White <jkentonwhite@gmail.com>
+Description: Creates an HTML Table Reader for ProjectTemplate. Install and include HtmlTableReader as a required package. Reads from a *.html.table file in the data folder: 
+Depends: 
+  R (>= 3.2.0),
+  ProjectTemplate,
+  rvest
+License: What license is it under?
+LazyData: true
