@@ -25,14 +25,13 @@ html.table.reader <- function(data.file, filename, variable.name)
   web_page <- rvest::html(url)
   tables <- rvest::html_nodes(web_page, "table")
 
-  for(table in tables) {
+  for(i in 1:length(tables)) {
+    table <- tables[i]
     table.name <- rvest::html_attr(table, "id")
-    if(!is.na(table.name)) {
-    table.name <- gsub("-", ".", table.name)  
+    table.name <- ifelse(!is.na(table.name), gsub("-", ".", table.name), i)  
     assign(paste(variable.name, table.name, sep="."),
       rvest::html_table(table),
            envir = .GlobalEnv)     
-    }
   }
 }
 
